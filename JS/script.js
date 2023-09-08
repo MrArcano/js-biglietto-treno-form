@@ -75,40 +75,40 @@ btnGen.addEventListener("click", function(){
     userTicket.innerHTML +=
     `
     <!-- inizio ticket -->
-        <div class="bg-white my-3">
-          <div class="container-fluid p-3">
-            <h2>DETTAGLIO PASSEGGERI</h2>
-            <div class="d-flex justify-content-between">
-      
-              <div class="bg-secondary p-2">
-                <h4>NOME PASSEGGERO</h4>
-                <span>${userData}</span>
-              </div>
-      
-              <div class="p-2">
-                <h5>Offerta</h5>
-                <span>${typeTicket}</span>
-              </div>
-      
-              <div class="p-2">
-                <h5>Carrozza</h5>
-                <span>${trainCarriage}</span>
-              </div>
-      
-              <div class="p-2">
-                <h5>Codice CP</h5>
-                <span>${postalCode.toString().padStart(5,"0")}</span>
-              </div>
-      
-              <div class="p-2">
-                <h5>Costo biglietto</h5>
-                <span>${parseFloat(price).toFixed(2)} &euro;</span>
-              </div>
-      
+      <div class="bg-white my-3">
+        <div class="container-fluid p-3">
+          <h2>DETTAGLIO PASSEGGERI</h2>
+          <div class="d-flex justify-content-between border border-secondary border-3 border-end-0">
+    
+            <div class="bg-secondary p-2 lh-0">
+              <h4>NOME PASSEGGERO</h4>
+              <span class="fw-bold">${userData}</span>
             </div>
+    
+            <div class="py-3 px-2">
+              <h5 class="pb-4">Offerta</h5>
+              <span>${typeTicket}</span>
+            </div>
+    
+            <div class="py-3 px-2">
+              <h5 class="pb-4">Carrozza</h5>
+              <span>${trainCarriage}</span>
+            </div>
+    
+            <div class="py-3 px-2">
+              <h5 class="pb-4">Codice CP</h5>
+              <span>${postalCode.toString().padStart(5,"0")}</span>
+            </div>
+    
+            <div class="py-3 px-2">
+              <h5 class="pb-4">Costo biglietto</h5>
+              <span>${parseFloat(price).toFixed(2)} &euro;</span>
+            </div>
+    
           </div>
         </div>
-        <!-- fine ticket -->
+      </div>
+      <!-- fine ticket -->
     `;
   }/* fine if inserimento corretto */
 

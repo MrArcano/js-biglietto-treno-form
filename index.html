@@ -16,23 +16,23 @@
 
   <!-- section data insert -->
   <section class="container my-5">
-    <h1 class="text-center text-white">CALCOLA IL PREZZO DEL TUO BIGLIETTO</h1>
-    <form class="bg-white p-5">
-      <div class="d-flex justify-content-between my-3 ">
+    <h1 class="text-center text-white mb-4">CALCOLA IL PREZZO DEL TUO BIGLIETTO</h1>
+    <form class="bg-white p-5 rounded-4 shadow">
+      <div class="row row-cols-3 my-3 text-wine fw-bold">
         <div>
           <label for="user" class="form-label">Nome Cognome</label>
-          <input type="text" class="form-control" name="" id="user" placeholder="Inserisci il tuo nome" >
+          <input type="text" class="form-control form-control-cst" name="" id="user" placeholder="Inserisci il tuo nome" >
         </div>
   
         <div>
           <label for="km" class="form-label">Km da percorrere</label>
-          <input type="number" class="form-control" name="" id="km" placeholder="Inserisci i km">
+          <input type="number" class="form-control form-control-cst" name="" id="km" placeholder="Inserisci i km">
         </div>
   
         <div>
           <label for="age" class="form-label">Fasci di età</label>
-          <select class="form-select" id="age">
-            <option selected></option>
+          <select class="form-select form-control-cst" id="age">
+            <option disabled selected value>-- seleziona un'opzione --</option>
             <option value="0">Minorenne</option>
             <option value="1">Maggiorenne</option>
             <option value="2">Over 65</option>
@@ -41,8 +41,8 @@
       </div>
 
       <div class="text-center">
-        <button type="button" class="btn btn-secondary" id="btn-gen">Genera</button>
-        <button type="reset" class="btn btn-secondary" id="btn-del">Annulla</button>
+        <button type="button" class="btn btn-secondary mx-2 text-wine fw-bold bg-light-grey" id="btn-gen">Genera</button>
+        <button type="reset" class="btn btn-secondary mx-2 text-wine fw-bold bg-light-grey" id="btn-del">Annulla</button>
       </div>
     </form>
   </section>

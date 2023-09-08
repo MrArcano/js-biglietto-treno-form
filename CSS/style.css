@@ -1,3 +1,27 @@
 .bg-wine{
   background-color: #b71248;
 }
+
+.bg-light-grey{
+  background-color: lightgray;
+}
+
+.text-wine{
+  color: #b71248;
+}
+
+.lh-0{
+  line-height: 0px;
+}
+
+.form-control-cst{
+  border-color: #b71248;
+  font-weight: bold;
+}
+
+.form-control-cst:focus{
+  background-color: #b71248;
+  border-color: black;
+  box-shadow: none;
+  color: white;
+}
