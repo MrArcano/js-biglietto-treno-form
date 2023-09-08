@@ -2,6 +2,7 @@
 const btnGen = document.getElementById("btn-gen");
 const btnDel = document.getElementById("btn-del");
 const userTicket = document.getElementById("ticket");
+const titleTicket = document.querySelector("h1.title-ticket");
 
 // dichiarazione variabili utili
 let userData = "userData";
@@ -30,9 +31,11 @@ btnGen.addEventListener("click", function(){
   // controllo i dati
   if((userKm > 0) && (userAge >=0 && userAge <=2) && (userData.trim()!="")){
     insertOk=true;
+    titleTicket.innerHTML = "IL TUO BIGLIETTO";
   }else{
     insertOk=false;
-    userTicket.innerHTML = "<h2>Hai inserito dei dati non validi</h2>";
+    titleTicket.innerHTML = "<h2>Hai inserito dei dati non validi</h2>";
+    userTicket.innerHTML = "";
   }
 
 
@@ -112,7 +115,8 @@ btnGen.addEventListener("click", function(){
   
 })
 
-
+// Pulisco il contenuto della sezione ticket
 btnDel.addEventListener("click", function(){
+  titleTicket.innerHTML = "";
   userTicket.innerHTML = "";
 });
