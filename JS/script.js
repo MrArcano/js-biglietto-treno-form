@@ -46,19 +46,19 @@ btnGen.addEventListener("click", function(){
     // minorenni
     if(userAge===0){
       price = price * (100 - discountUnder18) / 100;
-      typeTicket = "Biglietto Silver";
+      typeTicket = "TICKET YOUNG";
     }
 
     // maggiorenni
     if(userAge==1){
       price = price;
-      typeTicket = "Biglietto Normale";
+      typeTicket = "TICKET ADULT";
     }
 
     // over65
     if(userAge==2){
       price = price * (100 - discountOver65) / 100;
-      typeTicket = "Biglietto Gold";
+      typeTicket = "TICKET SENIOR";
     }
 
     // Calcolo numero random carrozza
@@ -74,6 +74,134 @@ btnGen.addEventListener("click", function(){
     // stampo il mio template ticket
     userTicket.innerHTML +=
     `
+    <!--inizo ticket -->
+    <div class="ticket-box row rounded-3 overflow-hidden shadow">
+      <!-- Ticket LEFT -->
+      <div class="ticket-left col-8">
+        <div class="ticket-top d-flex justify-content-between align-items-center">
+          <div>
+            <img class="img-fluid" src="img/train-left.svg" alt="train-left">
+            <span class="fs-4 fw-bold align-middle ps-3">TRAIN TICKET</span>
+          </div>
+          <span class="fs-5 pe-4">T4 04592963153</span>
+        </div>
+        <div class="ticket-middle">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-6">
+                <div class="pb-2">
+                  <span class="d-block fs-6">NAME OF PASSENGER</span>
+                  <span class="fs-4 lh-0">${userData.toUpperCase()}</span>
+                </div>
+
+                <div class="pb-2">
+                  <span class="d-block fs-6">FROM:</span>
+                  <span class="fs-4 lh-0">PARIS</span>
+                </div>
+
+                <div class="pb-2">
+                  <span class="d-block fs-6">TO:</span>
+                  <span class="fs-4 lh-0">LONDON</span>
+                </div>
+
+              </div>
+              <div class="col-2">
+                <div class="pb-2">
+                  <span class="d-block fs-6">PRICE:</span>
+                  <span class="fs-4 lh-0">${parseFloat(price).toFixed(2)}&euro;</span>
+                </div>
+              </div>
+              <div class="col-3">
+                <div class="pb-2">
+                  <span class="d-block fs-6">TRAIN</span>
+                  <span class="fs-4 lh-0">3924</span>
+                </div>
+                <div class="pb-2">
+                  <span class="d-block fs-6">PLATFORM</span>
+                  <span class="fs-4 lh-0">3</span>
+                </div>
+                <div class="pb-2">
+                  <span class="d-block fs-6">CARRIAGE N°</span>
+                  <span class="fs-4 lh-0">${trainCarriage}</span>
+                </div>
+              </div>
+              <div class="col-1 p-0">
+                <div class="barcode">
+                  <img class="img-fluid" src="img/bardcode.svg" alt="">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-3">
+                <span class="d-block fs-6">DATE</span>
+                <span class="fs-4 lh-0">12 MAY</span>
+              </div>
+              <div class="col-3">
+                <span class="d-block fs-6">DEPATURE</span>
+                <span class="fs-4 lh-0">14:30</span>
+              </div>
+              <div class="col-2">
+                <span class="d-block fs-6">ARRIVE</span>
+                <span class="fs-4 lh-0">16:50</span>
+              </div>
+              <div class="col">
+                <span class="d-block fs-6">SEAT</span>
+                <span class="fs-4 lh-0">A18</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ticket-bottom">
+          <div class="container-fluid">
+            <span>${typeTicket}</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ticket RIGHT -->
+      <div class="ticket-right col-4">
+        <div class="ticket-top d-flex justify-content-center align-items-center">
+          <span class="fs-4 fw-bold align-middle ps-3">TRAIN TICKET</span>
+        </div>
+        <div class="ticket-middle">
+          <div class="container-fluid">
+            <div class="pb-2">
+              <span class="d-block fs-6">NAME OF PASSENGER</span>
+              <span class="fs-4 lh-0">${userData.toUpperCase()}</span>
+            </div>
+  
+            <div class="pb-2">
+              <span class="d-block fs-6">FROM:</span>
+              <span class="fs-4 lh-0">PARIS</span>
+            </div>
+  
+            <div class="pb-2">
+              <span class="d-block fs-6">TO:</span>
+              <span class="fs-4 lh-0">LONDON</span>
+            </div>
+
+            <div class="row">
+              <div class="col-6">
+                <span class="d-block fs-6">TRAIN</span>
+                <span class="fs-4 lh-0">3924</span>
+              </div>
+              <div class="col-6">
+                <span class="d-block fs-6">SEAT</span>
+                <span class="fs-4 lh-0">A18</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ticket-bottom">
+          <div class="container-fluid">
+            <span>${typeTicket}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--fine ticket -->
+
+
     <!-- inizio ticket -->
       <div class="bg-white my-3">
         <div class="container-fluid p-3">

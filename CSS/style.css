@@ -13,8 +13,8 @@
 /* UTILITY */
 /* --------------------------------------------- */
 .bg-wine{
-  background-color: #b71248;
-}
+  background-color: var(--bg-ticket);
+} 
 
 .bg-light-grey{
   background-color: lightgray;
