@@ -116,17 +116,19 @@
 /* ticket middle */
 .ticket-middle{
   height: calc(100% - 80px);
-  padding: 8px 16px;
+  padding: 16px;
 
   position: relative; /* devo dare un position se no il background lo copre */
 }
 
 .barcode{
-  background-color: red;
-  transform: translate(-50%,0);
-
   width: 160px;
   height: 40px;
+
+  transform-origin: bottom left;
+  transform: rotate(90deg);
+  
+  object-fit: contain;
 }
 /* ticket bottom */
 .ticket-bottom{
