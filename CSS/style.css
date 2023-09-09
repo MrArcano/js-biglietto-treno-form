@@ -1,3 +1,17 @@
+:root{
+  --bg-ticket: #b71248;
+}
+
+/* DEBUG */
+/* --------------------------------------------- */
+.debug *{
+  border: 1px solid black;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+/* --------------------------------------------- */
+
+/* UTILITY */
+/* --------------------------------------------- */
 .bg-wine{
   background-color: #b71248;
 }
@@ -25,3 +39,100 @@
   box-shadow: none;
   color: white;
 }
+/* --------------------------------------------- */
+
+
+/* TICKET */
+/* container ticket */
+.ticket-box{
+  width: 900px;
+  height: 350px;
+  margin: 0 auto;
+
+  background: linear-gradient(to bottom, #eb9d56 0px 60px, #f8e0bb 60px 330px, #ffffff 330px 350px);
+
+  position: relative;
+}
+
+.ticket-box::before{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  
+  background-image: url("/img/train-right.svg");
+  background-size: contain;
+  background-position-x: calc(100% + 50px);
+  background-position-y: 50px;
+  background-repeat: no-repeat;
+
+  filter: opacity(0.6);
+}
+
+/* ticket SX */
+.ticket-left{
+  padding: 0;
+}
+
+/* ticket DX */
+.ticket-right{
+  border-left: 4px dashed var(--bg-ticket);
+  position: relative;
+  padding: 0;
+}
+
+/* Bollini sulla linea tratteggiata */
+/* --------------------------------------------- */
+.ticket-right::before,
+.ticket-right::after{
+  content: "";
+  position: absolute;
+  width: 24px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background-color: var(--bg-ticket);
+  left: -14px;
+}
+
+.ticket-right::before{
+  top: -12px;
+}
+
+.ticket-right::after{
+  bottom: -12px;
+}
+/* --------------------------------------------- */
+
+/* ticket top */
+.ticket-top{
+  height: 60px;
+}
+
+.ticket-top img{
+  height: 60px;
+  filter: invert(1) opacity(0.8);
+}
+/* ticket middle */
+.ticket-middle{
+  height: calc(100% - 80px);
+  padding: 8px 16px;
+
+  position: relative; /* devo dare un position se no il background lo copre */
+}
+
+.barcode{
+  background-color: red;
+  transform: translate(-50%,0);
+
+  width: 160px;
+  height: 40px;
+}
+/* ticket bottom */
+.ticket-bottom{
+  height: 20px;
+  padding: 0px 16px;
+
+  font-size: 12px;
+}
+
