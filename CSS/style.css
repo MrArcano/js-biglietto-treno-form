@@ -138,3 +138,11 @@
   font-size: 12px;
 }
 
+/* MEDIA query ticket */
+
+@media screen and (max-width: 768px) {
+  div#ticket{
+    transform-origin: left top;
+    scale: 0.5;
+  }
+}
