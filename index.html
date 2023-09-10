@@ -18,18 +18,18 @@
   <section class="container my-5">
     <h1 class="text-center text-white mb-4">CALCOLA IL PREZZO DEL TUO BIGLIETTO</h1>
     <form class="bg-white p-5 rounded-4 shadow">
-      <div class="row row-cols-1 row-cols-md-3 my-3 text-wine fw-bold">
-        <div>
+      <div class="row my-3 text-wine fw-bold">
+        <div class="col-12 col-md-4">
           <label for="user" class="form-label">Nome Cognome</label>
           <input type="text" class="form-control form-control-cst" name="" id="user" placeholder="Inserisci il tuo nome" >
         </div>
   
-        <div>
+        <div class="col-12 col-md-4">
           <label for="km" class="form-label">Km da percorrere</label>
           <input type="number" class="form-control form-control-cst" name="" id="km" placeholder="Inserisci i km">
         </div>
   
-        <div>
+        <div class="col-12 col-md-4">
           <label for="age" class="form-label">Fasci di età</label>
           <select class="form-select form-control-cst" id="age">
             <option disabled selected value>-- seleziona un'opzione --</option>
@@ -38,6 +38,21 @@
             <option value="2">Over 65</option>
           </select>
         </div>
+
+        <div class="col-12 col-md-6">
+          <label for="city-start" class="form-label">Citta di Partenza</label>
+          <select class="form-select form-control-cst" id="city-start">
+            <option disabled selected value>-- seleziona un'opzione --</option>
+          </select>
+        </div>
+
+        <div class="col-12 col-md-6">
+          <label for="city-end" class="form-label">Citta di Arrivo</label>
+          <select class="form-select form-control-cst" id="city-end">
+            <option disabled selected value>-- seleziona un'opzione --</option>
+          </select>
+        </div>
+
       </div>
 
       <div class="text-center">

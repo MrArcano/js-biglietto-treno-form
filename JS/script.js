@@ -3,6 +3,8 @@ const btnGen = document.getElementById("btn-gen");
 const btnDel = document.getElementById("btn-del");
 const userTicket = document.getElementById("ticket");
 const titleTicket = document.querySelector("h1.title-ticket");
+const selectCityStart = document.getElementById("city-start");
+const selectCityEnd = document.getElementById("city-end");
 
 // dichiarazione variabili utili
 let userData = "userData";
@@ -65,10 +67,12 @@ const europeanCity = [
   "London"
 ];
 
-// for (let index = 0; index < array.length; index++) {
-//   const element = array[index];
-  
-// };
+// Carico il vettore delle città come opzione del select
+for (let i = 0; i < europeanCity.length; i++) {
+  selectCityStart.innerHTML +=` <option>${europeanCity[i]}</option> ` 
+  selectCityEnd.innerHTML +=` <option>${europeanCity[i]}</option> ` 
+}
+
 
 btnGen.addEventListener("click", function(){
   // importa i dati dal form
@@ -116,8 +120,6 @@ btnGen.addEventListener("click", function(){
     let max = 10;
     let min = 1;
     trainCarriage = Math.floor(Math.random() * (max - min + 1) ) + min;
-
-    // rnd città partenza e arrivo
 
     // rnd giorno e mese
     num = Math.floor(Math.random() * months.length);
@@ -200,12 +202,12 @@ btnGen.addEventListener("click", function(){
 
                 <div class="pb-2">
                   <span class="d-block fs-6">FROM:</span>
-                  <span class="fs-4 lh-0">PARIS</span>
+                  <span class="fs-4 lh-0">${selectCityStart.value.toUpperCase()}</span>
                 </div>
 
                 <div class="pb-2">
                   <span class="d-block fs-6">TO:</span>
-                  <span class="fs-4 lh-0">LONDON</span>
+                  <span class="fs-4 lh-0">${selectCityEnd.value.toUpperCase()}</span>
                 </div>
 
               </div>
@@ -276,12 +278,12 @@ btnGen.addEventListener("click", function(){
   
             <div class="pb-2">
               <span class="d-block fs-6">FROM:</span>
-              <span class="fs-4 lh-0">PARIS</span>
+              <span class="fs-4 lh-0">${selectCityStart.value.toUpperCase()}</span>
             </div>
   
             <div class="pb-2">
               <span class="d-block fs-6">TO:</span>
-              <span class="fs-4 lh-0">LONDON</span>
+              <span class="fs-4 lh-0">${selectCityEnd.value.toUpperCase()}</span>
             </div>
 
             <div class="row">
