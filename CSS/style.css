@@ -61,7 +61,7 @@
   height: 100%;
   z-index: 0;
   
-  background-image: url("img/train-right.svg");
+  background-image: url("../img/train-right.svg");
   background-size: contain;
   background-position-x: calc(100% + 50px);
   background-position-y: 50px;
