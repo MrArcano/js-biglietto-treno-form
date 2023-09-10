@@ -9,15 +9,66 @@ let userData = "userData";
 let userKm = 0;
 let userAge = 0;
 let typeTicket = "tipo";
+let numTicket = "";
+let numberTrain = 0;
+let dateTicket = "";
 let trainCarriage = 0;
+let stationPlatform = 0;
 let postalCode = "00000";
 let price = "0";
 let insertOk = false;
+let num = 0;
+let letter = "";
 
 // dichiarazione costanti
 const priceKm = 0.21;
 const discountUnder18 = 20;
 const discountOver65 = 40;
+const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+const months = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
+const europeanCity = [
+  "Tirana",
+  "Vienna",
+  "Baku",
+  "Minsk",
+  "Brussels",
+  "Sarajevo",
+  "Sofia",
+  "Prague",
+  "Copenhagen",
+  "Paris",
+  "Berlin",
+  "Athens",
+  "Budapest",
+  "Dublin",
+  "Rome",
+  "Luxembourg",
+  "Valletta",
+  "Chisinau",
+  "Monaco",
+  "Amsterdam",
+  "Skopje",
+  "Oslo",
+  "Warsaw",
+  "Lisbon",
+  "Bucharest",
+  "Moscow",
+  "San Marino",
+  "Belgrade",
+  "Bratislava",
+  "Ljubljana",
+  "Madrid",
+  "Stockholm",
+  "Bern",
+  "Ankara",
+  "Kiev",
+  "London"
+];
+
+// for (let index = 0; index < array.length; index++) {
+//   const element = array[index];
+  
+// };
 
 btnGen.addEventListener("click", function(){
   // importa i dati dal form
@@ -61,18 +112,71 @@ btnGen.addEventListener("click", function(){
       typeTicket = "TICKET SENIOR";
     }
 
-    // Calcolo numero random carrozza
+    // rnd n° carrozza
     let max = 10;
     let min = 1;
     trainCarriage = Math.floor(Math.random() * (max - min + 1) ) + min;
 
-    // Calcolo postalCode
+    // rnd città partenza e arrivo
+
+    // rnd giorno e mese
+    num = Math.floor(Math.random() * months.length);
+    let month = months[num];
+
+    max = 30;
+    console.log("default 30");
+    if(num==1){
+      max=28;
+      console.log("febbrario 28");
+    }
+    if (num==0 || num==2 || num==4 || num==6 || num==7 || num==9 || num==11){
+      max=31;
+      console.log("mesi 31");
+    }
+
+    min = 1;
+    let day = Math.floor(Math.random() * (max - min + 1) ) + min;
+     
+    dateTicket = day + " " + month;
+
+    // rnd orario partenza e arrivo
+
+    // rnd n° biglietto
+    max = 9;
+    min = 1;
+    num = Math.floor(Math.random() * (max - min + 1) ) + min;
+    letter = alphabet.charAt(Math.floor(Math.random() * alphabet.length));
+    numTicket = letter + num;
+
+    max = 99999999999;
+    min = 1;
+    num = Math.floor(Math.random() * (max - min + 1) ) + min;
+    numTicket += " " + num.toString().padStart(11,"0");
+
+    // rnd n° treno
+    max = 9999;
+    min = 1;
+    numberTrain = Math.floor(Math.random() * (max - min + 1) ) + min;
+
+    // rnd n° binario
+    max = 6;
+    min = 1;
+    stationPlatform = Math.floor(Math.random() * (max - min + 1) ) + min;
+
+    // rnd n° posto sedile
+    max = 99;
+    min = 1;
+    num = Math.floor(Math.random() * (max - min + 1) ) + min;
+    letter = alphabet.charAt(Math.floor(Math.random() * alphabet.length));
+    seatTrain = letter + num.toString().padStart(2,"0");
+
+    // rnd postalCode
     max = 98079;
     min = 10;
     postalCode = Math.floor(Math.random() * (max - min + 1) ) + min;
     
     // stampo il mio template ticket
-    userTicket.innerHTML +=
+    userTicket.innerHTML =
     `
     <!--inizo ticket -->
     <div class="ticket-box row rounded-3 overflow-hidden shadow">
@@ -83,7 +187,7 @@ btnGen.addEventListener("click", function(){
             <img class="img-fluid" src="img/train-left.svg" alt="train-left">
             <span class="fs-4 fw-bold align-middle ps-3">TRAIN TICKET</span>
           </div>
-          <span class="fs-5 pe-4">T4 04592963153</span>
+          <span class="fs-5 pe-4">${numTicket}</span>
         </div>
         <div class="ticket-middle">
           <div class="container-fluid">
@@ -114,11 +218,11 @@ btnGen.addEventListener("click", function(){
               <div class="col-3">
                 <div class="pb-2">
                   <span class="d-block fs-6">TRAIN</span>
-                  <span class="fs-4 lh-0">3924</span>
+                  <span class="fs-4 lh-0">${numberTrain.toString().padStart(4,"0")}</span>
                 </div>
                 <div class="pb-2">
                   <span class="d-block fs-6">PLATFORM</span>
-                  <span class="fs-4 lh-0">3</span>
+                  <span class="fs-4 lh-0">${stationPlatform}</span>
                 </div>
                 <div class="pb-2">
                   <span class="d-block fs-6">CARRIAGE N°</span>
@@ -134,7 +238,7 @@ btnGen.addEventListener("click", function(){
             <div class="row">
               <div class="col-3">
                 <span class="d-block fs-6">DATE</span>
-                <span class="fs-4 lh-0">12 MAY</span>
+                <span class="fs-4 lh-0">${dateTicket}</span>
               </div>
               <div class="col-3">
                 <span class="d-block fs-6">DEPATURE</span>
@@ -146,7 +250,7 @@ btnGen.addEventListener("click", function(){
               </div>
               <div class="col">
                 <span class="d-block fs-6">SEAT</span>
-                <span class="fs-4 lh-0">A18</span>
+                <span class="fs-4 lh-0">${seatTrain}</span>
               </div>
             </div>
           </div>
@@ -183,11 +287,11 @@ btnGen.addEventListener("click", function(){
             <div class="row">
               <div class="col-6">
                 <span class="d-block fs-6">TRAIN</span>
-                <span class="fs-4 lh-0">3924</span>
+                <span class="fs-4 lh-0">${numberTrain.toString().padStart(4,"0")}</span>
               </div>
               <div class="col-6">
                 <span class="d-block fs-6">SEAT</span>
-                <span class="fs-4 lh-0">A18</span>
+                <span class="fs-4 lh-0">${seatTrain}</span>
               </div>
             </div>
           </div>
