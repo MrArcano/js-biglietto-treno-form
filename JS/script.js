@@ -194,7 +194,7 @@ btnGen.addEventListener("click", function(){
         <div class="ticket-middle">
           <div class="container-fluid">
             <div class="row">
-              <div class="col-6">
+              <div class="col-5">
                 <div class="pb-2">
                   <span class="d-block fs-6">NAME OF PASSENGER</span>
                   <span class="fs-4 lh-0">${userData.toUpperCase()}</span>
@@ -211,7 +211,7 @@ btnGen.addEventListener("click", function(){
                 </div>
 
               </div>
-              <div class="col-2">
+              <div class="col-3">
                 <div class="pb-2">
                   <span class="d-block fs-6">PRICE:</span>
                   <span class="fs-4 lh-0">${parseFloat(price).toFixed(2)}&euro;</span>
@@ -242,11 +242,11 @@ btnGen.addEventListener("click", function(){
                 <span class="d-block fs-6">DATE</span>
                 <span class="fs-4 lh-0">${dateTicket}</span>
               </div>
-              <div class="col-3">
+              <div class="col-2">
                 <span class="d-block fs-6">DEPATURE</span>
                 <span class="fs-4 lh-0">14:30</span>
               </div>
-              <div class="col-2">
+              <div class="col-3">
                 <span class="d-block fs-6">ARRIVE</span>
                 <span class="fs-4 lh-0">16:50</span>
               </div>
@@ -307,43 +307,46 @@ btnGen.addEventListener("click", function(){
     </div>
     <!--fine ticket -->
 
-
-    <!-- inizio ticket -->
-      <div class="bg-white my-3">
-        <div class="container-fluid p-3">
-          <h2>DETTAGLIO PASSEGGERI</h2>
-          <div class="d-flex justify-content-between border border-secondary border-3 border-end-0">
-    
-            <div class="bg-secondary p-2 lh-0">
-              <h4>NOME PASSEGGERO</h4>
-              <span class="fw-bold">${userData}</span>
-            </div>
-    
-            <div class="py-3 px-2">
-              <h5 class="pb-4">Offerta</h5>
-              <span>${typeTicket}</span>
-            </div>
-    
-            <div class="py-3 px-2">
-              <h5 class="pb-4">Carrozza</h5>
-              <span>${trainCarriage}</span>
-            </div>
-    
-            <div class="py-3 px-2">
-              <h5 class="pb-4">Codice CP</h5>
-              <span>${postalCode.toString().padStart(5,"0")}</span>
-            </div>
-    
-            <div class="py-3 px-2">
-              <h5 class="pb-4">Costo biglietto</h5>
-              <span>${parseFloat(price).toFixed(2)} &euro;</span>
-            </div>
-    
-          </div>
-        </div>
-      </div>
-      <!-- fine ticket -->
     `;
+
+    // vecchio template ticket
+
+    // <!-- inizio ticket -->
+    //   <div class="bg-white my-3">
+    //     <div class="container-fluid p-3">
+    //       <h2>DETTAGLIO PASSEGGERI</h2>
+    //       <div class="d-flex justify-content-between border border-secondary border-3 border-end-0">
+    
+    //         <div class="bg-secondary p-2 lh-0">
+    //           <h4>NOME PASSEGGERO</h4>
+    //           <span class="fw-bold">${userData}</span>
+    //         </div>
+    
+    //         <div class="py-3 px-2">
+    //           <h5 class="pb-4">Offerta</h5>
+    //           <span>${typeTicket}</span>
+    //         </div>
+    
+    //         <div class="py-3 px-2">
+    //           <h5 class="pb-4">Carrozza</h5>
+    //           <span>${trainCarriage}</span>
+    //         </div>
+    
+    //         <div class="py-3 px-2">
+    //           <h5 class="pb-4">Codice CP</h5>
+    //           <span>${postalCode.toString().padStart(5,"0")}</span>
+    //         </div>
+    
+    //         <div class="py-3 px-2">
+    //           <h5 class="pb-4">Costo biglietto</h5>
+    //           <span>${parseFloat(price).toFixed(2)} &euro;</span>
+    //         </div>
+    
+    //       </div>
+    //     </div>
+    //   </div>
+    //   <!-- fine ticket -->
+    
   }/* fine if inserimento corretto */
 
   
