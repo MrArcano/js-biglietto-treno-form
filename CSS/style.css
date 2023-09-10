@@ -138,11 +138,23 @@
   font-size: 12px;
 }
 
+div#ticket{
+  transform-origin: left top;
+  scale: 0.57;
+}
+
 /* MEDIA query ticket */
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 768px) {
   div#ticket{
     transform-origin: left top;
-    scale: 0.5;
+    scale: 0.77;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  div#ticket{
+    transform-origin: left top;
+    scale: 1.02;
   }
 }
